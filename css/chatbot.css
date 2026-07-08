@@ -9,8 +9,7 @@
   transition: opacity 0.5s ease;
 }
 
-body.intro-finalizada .chatbot,
-body.pagina-envelope .chatbot {
+body.intro-finalizada .chatbot {
   opacity: 1;
   pointer-events: auto;
 }

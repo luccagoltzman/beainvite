@@ -315,16 +315,16 @@ body.intro-finalizada {
 .convite__foto {
   position: absolute;
   inset: 0;
-  width: 58%;
+  width: 52%;
   z-index: 0;
   overflow: hidden;
 }
 
 .convite__foto img {
-  width: 340%;
+  width: 320%;
   height: 100%;
   object-fit: cover;
-  object-position: 3% center;
+  object-position: 0% center;
   display: block;
 }
 
@@ -333,8 +333,8 @@ body.intro-finalizada {
   inset: 0;
   background: linear-gradient(
     to right,
-    transparent 55%,
-    rgba(0, 0, 0, 0.45) 78%,
+    transparent 62%,
+    rgba(0, 0, 0, 0.35) 82%,
     var(--preto) 100%
   );
 }
@@ -382,7 +382,7 @@ body.intro-finalizada {
   align-items: center;
   justify-content: flex-end;
   gap: 0.75rem;
-  padding: 2.6rem 1.8rem 0 42%;
+  padding: 2.6rem 1.5rem 0 48%;
 }
 
 .convite__titulo {
@@ -400,10 +400,10 @@ body.intro-finalizada {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  text-align: center;
-  padding: 0 1.5rem 0 38%;
+  text-align: right;
+  padding: 0 1.4rem 0 48%;
 }
 
 .convite__titulo-profissional {
@@ -506,7 +506,7 @@ body.intro-finalizada {
 
 .pagina-convite__assinatura span {
   font-family: var(--fonte-script);
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   color: var(--dourado-claro);
   display: block;
   margin-top: 0.2rem;
@@ -712,6 +712,8 @@ body.intro-finalizada {
 
   .convite__nome {
     padding: 0 1.2rem;
+    align-items: center;
+    text-align: center;
   }
 
   .detalhes__grade {
