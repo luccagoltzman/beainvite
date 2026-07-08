@@ -28,6 +28,11 @@
         "O traje solicitado é <strong>esporte fino</strong>. Vista-se com elegância para celebrar essa noite especial!",
     },
     {
+      pergunta: "Qual o valor da senha?",
+      resposta:
+        "O valor da senha é <strong>R$ 180,00</strong> por convidado. Para mais informações sobre pagamento, entre em contato pelo WhatsApp.",
+    },
+    {
       pergunta: "Como confirmar presença?",
       resposta:
         'Para confirmar sua presença, clique no botão <strong>"Confirmar presença"</strong> no convite ou fale diretamente pelo <a href="' +
