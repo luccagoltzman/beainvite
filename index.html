@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Você recebeu um convite — Beatriz Gusmão</title>
+  <meta name="description" content="Abra o envelope e descubra o convite do Baile de Formatura de Enf. Beatriz Gusmão">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/envelope.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body class="pagina-envelope">
+  <div class="pagina-envelope__conteudo">
+    <div class="pagina-envelope__intro">
+      <p class="pagina-envelope__saudacao">Você recebeu um convite</p>
+      <p class="pagina-envelope__texto">Algo especial espera por você dentro deste envelope.</p>
+    </div>
+
+    <button class="envelope-btn" id="abrir-envelope" type="button" aria-label="Abrir envelope e ver o convite">
+      <div class="envelope">
+        <div class="envelope__corpo">
+          <div class="envelope__carta" aria-hidden="true">
+            <div class="envelope__carta-linha"></div>
+          </div>
+          <div class="envelope__lateral envelope__lateral--esq"></div>
+          <div class="envelope__lateral envelope__lateral--dir"></div>
+          <div class="envelope__borda"></div>
+        </div>
+        <div class="envelope__aba" aria-hidden="true">
+          <div class="envelope__aba-frente"></div>
+        </div>
+        <div class="envelope__selo" aria-hidden="true">
+          <div class="envelope__selo-cera">
+            <span class="envelope__selo-inicial">B</span>
+          </div>
+        </div>
+      </div>
+    </button>
+
+    <p class="pagina-envelope__dica">Clique para abrir</p>
+  </div>
+
+  <script src="js/envelope.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

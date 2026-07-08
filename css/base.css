@@ -1,0 +1,58 @@
+:root {
+  --preto: #000000;
+  --branco: #ffffff;
+  --verde: #1e4d3d;
+  --dourado: #c8a84b;
+  --dourado-claro: #e0c878;
+  --creme: #f4efe4;
+  --creme-escuro: #e8dfd0;
+  --marrom: #5c4a3a;
+
+  --fonte-serif: "Cormorant Garamond", "Georgia", serif;
+  --fonte-script: "Great Vibes", cursive;
+  --fonte-script-leve: "Sacramento", cursive;
+  --fonte-sans: "Montserrat", "Helvetica Neue", sans-serif;
+
+  --largura-convite: min(calc(100vw - 2rem), 480px);
+  --altura-convite: min(calc(100dvh - 4rem), 860px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: var(--fonte-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes surgir-suave {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

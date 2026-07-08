@@ -1,0 +1,766 @@
+
+body.pagina-convite {
+  min-height: 100dvh;
+  background: #060606;
+  color: var(--creme);
+  overflow-x: hidden;
+}
+
+
+body.intro-cheia,
+body.intro-reduzindo {
+  overflow: hidden;
+}
+
+body.intro-cheia .ambiente {
+  opacity: 0;
+}
+
+body.intro-reduzindo .ambiente,
+body.intro-concluida .ambiente {
+  opacity: 1;
+  transition: opacity 1.2s ease;
+}
+
+body.intro-cheia .pagina-convite__revelar {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.intro-cheia .pagina-convite__marco,
+body.intro-reduzindo .pagina-convite__marco {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  animation: none;
+}
+
+body.intro-cheia .marco,
+body.intro-reduzindo .marco {
+  opacity: 0;
+}
+
+body.intro-concluida .marco {
+  opacity: 1;
+  transition: opacity 0.7s ease 0.4s;
+}
+
+body.intro-cheia .convite {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+body.intro-reduzindo .convite {
+  width: var(--largura-convite);
+  height: var(--altura-convite);
+  will-change: width, height;
+  transition:
+    width 1.1s cubic-bezier(0.4, 0, 0.2, 1),
+    height 1.1s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.5s ease 0.6s,
+    box-shadow 0.6s ease 0.5s;
+  border-color: rgba(200, 168, 75, 0.15);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 20px 60px rgba(0, 0, 0, 0.65),
+    0 0 100px rgba(30, 77, 61, 0.1),
+    inset 0 0 80px rgba(0, 0, 0, 0.3);
+}
+
+body.intro-concluida .pagina-convite__revelar {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.9s ease, visibility 0s;
+}
+
+body.intro-concluida .pagina-convite__topo    { transition-delay: 0.15s; }
+body.intro-concluida .pagina-convite__mensagem { transition-delay: 0.3s; }
+body.intro-concluida .pagina-convite__detalhes { transition-delay: 0.45s; }
+body.intro-concluida .pagina-convite__cta    { transition-delay: 0.55s; }
+body.intro-concluida .pagina-convite__rodape { transition-delay: 0.65s; }
+
+body.intro-finalizada {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+.ambiente {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ambiente__brilho {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.ambiente__brilho--1 {
+  width: 55vw;
+  height: 55vw;
+  max-width: 600px;
+  max-height: 600px;
+  top: -10%;
+  left: -15%;
+  background: radial-gradient(circle, rgba(30, 77, 61, 0.22) 0%, transparent 70%);
+  animation: flutuar 18s ease-in-out infinite;
+}
+
+.ambiente__brilho--2 {
+  width: 45vw;
+  height: 45vw;
+  max-width: 500px;
+  max-height: 500px;
+  bottom: 5%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(200, 168, 75, 0.1) 0%, transparent 70%);
+  animation: flutuar 22s ease-in-out infinite reverse;
+}
+
+.ambiente__grao {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+.ambiente__particula {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--dourado);
+  opacity: 0;
+  animation: particula 8s ease-in-out infinite;
+}
+
+.ambiente__particula:nth-child(4)  { left: 12%; top: 20%; animation-delay: 0s;    animation-duration: 9s;  }
+.ambiente__particula:nth-child(5)  { left: 78%; top: 15%; animation-delay: 1.5s;  animation-duration: 11s; width: 2px; height: 2px; }
+.ambiente__particula:nth-child(6)  { left: 45%; top: 8%;  animation-delay: 3s;    animation-duration: 10s; }
+.ambiente__particula:nth-child(7)  { left: 90%; top: 55%; animation-delay: 0.8s;  animation-duration: 12s; width: 2px; height: 2px; }
+.ambiente__particula:nth-child(8)  { left: 8%;  top: 70%; animation-delay: 2.2s;  animation-duration: 9s;  }
+.ambiente__particula:nth-child(9)  { left: 62%; top: 85%; animation-delay: 4s;    animation-duration: 13s; }
+.ambiente__particula:nth-child(10) { left: 30%; top: 45%; animation-delay: 1s;    animation-duration: 11s; width: 2px; height: 2px; }
+.ambiente__particula:nth-child(11) { left: 55%; top: 60%; animation-delay: 5s;    animation-duration: 10s; }
+
+@keyframes flutuar {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(20px, 15px); }
+}
+
+@keyframes particula {
+  0%, 100% { opacity: 0; transform: translateY(0); }
+  20%      { opacity: 0.6; }
+  80%      { opacity: 0.3; }
+  50%      { transform: translateY(-30px); }
+}
+
+
+.pagina-convite__site {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+
+.pagina-convite__topo {
+  text-align: center;
+}
+
+.pagina-convite__revelar {
+  opacity: 0;
+}
+
+.pagina-convite__pre-titulo {
+  font-family: var(--fonte-serif);
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(244, 239, 228, 0.7);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.2rem;
+}
+
+.pagina-convite__titulo-pagina {
+  font-family: var(--fonte-serif);
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--branco);
+  line-height: 1.2;
+}
+
+.pagina-convite__subtitulo {
+  font-family: var(--fonte-sans);
+  font-size: clamp(0.7rem, 2.5vw, 0.8rem);
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  margin-top: 0.6rem;
+  opacity: 0.85;
+}
+
+
+.ornamento--central {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.ornamento__linha {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 168, 75, 0.45), transparent);
+}
+
+.ornamento__simbolo {
+  font-size: 0.55rem;
+  color: var(--dourado);
+  opacity: 0.8;
+}
+
+.ornamento__chevrons {
+  display: flex;
+  gap: 0.4rem;
+  color: var(--dourado);
+  font-family: var(--fonte-serif);
+  font-size: 0.75rem;
+  letter-spacing: -0.1em;
+  opacity: 0.75;
+}
+
+
+.pagina-convite__marco {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.marco {
+  position: absolute;
+  inset: -14px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.marco__canto {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-color: var(--dourado);
+  border-style: solid;
+  opacity: 0.55;
+}
+
+.marco__canto--tl { top: 0; left: 0;  border-width: 1.5px 0 0 1.5px; }
+.marco__canto--tr { top: 0; right: 0; border-width: 1.5px 1.5px 0 0; }
+.marco__canto--bl { bottom: 0; left: 0;  border-width: 0 0 1.5px 1.5px; }
+.marco__canto--br { bottom: 0; right: 0; border-width: 0 1.5px 1.5px 0; }
+
+.marco__borda {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(200, 168, 75, 0.35), rgba(200, 168, 75, 0.08), rgba(200, 168, 75, 0.35));
+}
+
+.marco__borda--top    { top: 0; }
+.marco__borda--bottom { bottom: 0; }
+
+
+.convite {
+  position: relative;
+  width: var(--largura-convite);
+  height: var(--altura-convite);
+  background: var(--preto);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(200, 168, 75, 0.15);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 20px 60px rgba(0, 0, 0, 0.65),
+    0 0 100px rgba(30, 77, 61, 0.1),
+    inset 0 0 80px rgba(0, 0, 0, 0.3);
+}
+
+.convite__foto {
+  position: absolute;
+  inset: 0;
+  width: 58%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.convite__foto img {
+  width: 340%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 3% center;
+  display: block;
+}
+
+.convite__foto-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent 55%,
+    rgba(0, 0, 0, 0.45) 78%,
+    var(--preto) 100%
+  );
+}
+
+.chevron {
+  color: var(--dourado);
+  font-family: var(--fonte-serif);
+  font-weight: 600;
+  letter-spacing: -0.12em;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(200, 168, 75, 0.25);
+}
+
+.convite__decoracao--vertical {
+  position: absolute;
+  top: 2.8rem;
+  left: 1.6rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.convite__decoracao--vertical .chevron {
+  font-size: 0.95rem;
+  transform: rotate(90deg);
+  opacity: 0.9;
+}
+
+.convite__decoracao--horizontal {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.convite__decoracao--horizontal .chevron {
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+
+.convite__cabecalho {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 2.6rem 1.8rem 0 42%;
+}
+
+.convite__titulo {
+  font-family: var(--fonte-serif);
+  font-size: clamp(0.72rem, 2.8vw, 0.88rem);
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--branco);
+  white-space: nowrap;
+}
+
+.convite__nome {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.5rem 0 38%;
+}
+
+.convite__titulo-profissional {
+  font-family: var(--fonte-script-leve);
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  color: var(--branco);
+  line-height: 1;
+  margin-bottom: -0.2rem;
+  opacity: 0.95;
+}
+
+.convite__nome-completo {
+  font-family: var(--fonte-script);
+  font-size: clamp(2.8rem, 10vw, 3.6rem);
+  font-weight: 400;
+  color: var(--verde);
+  line-height: 1.1;
+  text-shadow: 0 2px 24px rgba(30, 77, 61, 0.35);
+  margin-bottom: 1.4rem;
+}
+
+.convite__chamada {
+  font-family: var(--fonte-sans);
+  font-size: clamp(0.72rem, 2.6vw, 0.82rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--branco);
+  opacity: 0.92;
+}
+
+.convite__rodape {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 1.5rem 1.5rem 2.8rem;
+}
+
+.convite__save-the-date {
+  font-family: var(--fonte-serif);
+  font-size: clamp(0.78rem, 2.8vw, 0.92rem);
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--branco);
+  margin-bottom: 1.1rem;
+}
+
+.convite__data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.8rem, 3.5vw, 1.4rem);
+}
+
+.convite__data-parte {
+  font-family: var(--fonte-serif);
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  font-weight: 400;
+  color: var(--branco);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.convite__data-separador {
+  display: block;
+  width: 1px;
+  height: clamp(1.6rem, 5vw, 2.1rem);
+  background: rgba(255, 255, 255, 0.55);
+  flex-shrink: 0;
+}
+
+
+.pagina-convite__mensagem {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pagina-convite__citacao {
+  font-family: var(--fonte-serif);
+  font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.75;
+  color: rgba(244, 239, 228, 0.82);
+  max-width: 34rem;
+  quotes: none;
+}
+
+.pagina-convite__assinatura {
+  font-family: var(--fonte-sans);
+  font-size: 0.78rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: rgba(244, 239, 228, 0.5);
+}
+
+.pagina-convite__assinatura span {
+  font-family: var(--fonte-script);
+  font-size: 1.6rem;
+  color: var(--dourado-claro);
+  display: block;
+  margin-top: 0.2rem;
+  letter-spacing: 0;
+}
+
+
+.pagina-convite__detalhes {
+  width: 100%;
+}
+
+.pagina-convite__secao-titulo {
+  font-family: var(--fonte-serif);
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--branco);
+  margin-bottom: 1.8rem;
+}
+
+.detalhes__grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.detalhe-cartao {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(200, 168, 75, 0.12);
+  border-radius: 2px;
+  padding: 1.4rem 1.2rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+}
+
+.detalhe-cartao:hover {
+  border-color: rgba(200, 168, 75, 0.28);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.detalhe-cartao--link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.detalhe-cartao--link:hover .detalhe-cartao__valor {
+  color: var(--dourado-claro);
+}
+
+.detalhe-cartao--link:active {
+  transform: scale(0.98);
+}
+
+.detalhe-cartao__icone {
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 0.8rem;
+  color: var(--dourado);
+  opacity: 0.75;
+}
+
+.detalhe-cartao__icone svg {
+  width: 100%;
+  height: 100%;
+}
+
+.detalhe-cartao__titulo {
+  font-family: var(--fonte-sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 228, 0.45);
+  margin-bottom: 0.5rem;
+}
+
+.detalhe-cartao__valor {
+  font-family: var(--fonte-serif);
+  font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+  font-weight: 500;
+  color: var(--branco);
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.detalhe-cartao__extra {
+  font-family: var(--fonte-sans);
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: rgba(244, 239, 228, 0.4);
+  margin-top: 0.35rem;
+  letter-spacing: 0.04em;
+}
+
+
+.pagina-convite__cta {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.pagina-convite__cta-texto {
+  font-family: var(--fonte-serif);
+  font-size: clamp(1rem, 3.2vw, 1.15rem);
+  font-style: italic;
+  color: rgba(244, 239, 228, 0.7);
+  max-width: 26rem;
+  line-height: 1.6;
+}
+
+.pagina-convite__botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.4rem;
+  font-family: var(--fonte-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--preto);
+  background: linear-gradient(135deg, var(--dourado-claro) 0%, var(--dourado) 50%, #b8943a 100%);
+  border-radius: 1px;
+  box-shadow:
+    0 4px 20px rgba(200, 168, 75, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pagina-convite__botao:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 28px rgba(200, 168, 75, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+
+.pagina-convite__rodape {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.pagina-convite__rodape-texto {
+  font-family: var(--fonte-sans);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 228, 0.3);
+}
+
+
+@media (max-width: 380px) {
+  .pagina-convite__site {
+    padding: 2rem 1rem 3rem;
+    gap: 2.5rem;
+  }
+
+  .convite__foto {
+    width: 100%;
+    height: 52%;
+    top: 0;
+    bottom: auto;
+  }
+
+  .convite__foto img {
+    width: 100%;
+    object-position: center 20%;
+  }
+
+  .convite__foto-overlay {
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(0, 0, 0, 0.5) 75%,
+      var(--preto) 100%
+    );
+  }
+
+  .convite__decoracao--vertical {
+    top: 1.4rem;
+    left: 1.2rem;
+  }
+
+  .convite__cabecalho {
+    padding: 1.6rem 1.2rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .convite__nome {
+    padding: 0 1.2rem;
+  }
+
+  .detalhes__grade {
+    grid-template-columns: 1fr;
+  }
+
+  .marco {
+    inset: -10px;
+  }
+
+  .marco__canto {
+    width: 20px;
+    height: 20px;
+  }
+
+  .marco__borda {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+@media (min-width: 600px) {
+  .pagina-convite__site {
+    padding: 3.5rem 2rem 4.5rem;
+    gap: 3.5rem;
+  }
+
+  .marco__canto {
+    width: 36px;
+    height: 36px;
+  }
+
+  .marco__borda {
+    left: 36px;
+    right: 36px;
+  }
+}
+
+@media print {
+  .ambiente,
+  .pagina-convite__cta {
+    display: none;
+  }
+
+  body.pagina-convite {
+    background: white;
+  }
+
+  .convite {
+    box-shadow: none;
+  }
+}
