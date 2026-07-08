@@ -85,8 +85,9 @@ body.intro-concluida .pagina-convite__revelar {
 body.intro-concluida .pagina-convite__topo    { transition-delay: 0.15s; }
 body.intro-concluida .pagina-convite__mensagem { transition-delay: 0.3s; }
 body.intro-concluida .pagina-convite__detalhes { transition-delay: 0.45s; }
-body.intro-concluida .pagina-convite__cta    { transition-delay: 0.55s; }
-body.intro-concluida .pagina-convite__rodape { transition-delay: 0.65s; }
+body.intro-concluida .pagina-convite__senha   { transition-delay: 0.52s; }
+body.intro-concluida .pagina-convite__cta    { transition-delay: 0.6s; }
+body.intro-concluida .pagina-convite__rodape { transition-delay: 0.7s; }
 
 body.intro-finalizada {
   overflow-x: hidden;
@@ -535,6 +536,16 @@ body.intro-finalizada {
   gap: 1rem;
 }
 
+.detalhes__senha {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.detalhes__senha .detalhe-cartao {
+  width: min(100%, 280px);
+}
+
 .detalhe-cartao {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(200, 168, 75, 0.12);
@@ -605,6 +616,51 @@ body.intro-finalizada {
   letter-spacing: 0.04em;
 }
 
+.pagina-convite__senha {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.senha-mensagem {
+  max-width: 34rem;
+  padding: 1.8rem 1.6rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(200, 168, 75, 0.15);
+  border-radius: 2px;
+  backdrop-filter: blur(8px);
+}
+
+.senha-mensagem p {
+  font-family: var(--fonte-serif);
+  font-size: clamp(1rem, 3.2vw, 1.12rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.75;
+  color: rgba(244, 239, 228, 0.82);
+  margin-bottom: 1.1rem;
+}
+
+.senha-mensagem p:last-child {
+  margin-bottom: 0;
+}
+
+.senha-mensagem strong {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--dourado-claro);
+}
+
+.senha-mensagem__nota {
+  font-size: clamp(0.82rem, 2.6vw, 0.9rem) !important;
+  color: rgba(244, 239, 228, 0.5) !important;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(200, 168, 75, 0.1);
+  margin-top: 0.5rem;
+}
 
 .pagina-convite__cta {
   width: 100%;
@@ -669,6 +725,21 @@ body.intro-finalizada {
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: rgba(244, 239, 228, 0.3);
+}
+
+.pagina-convite__link-momentos {
+  font-family: var(--fonte-sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  color: rgba(200, 168, 75, 0.65);
+  transition: color 0.2s ease;
+  margin-top: 0.25rem;
+}
+
+.pagina-convite__link-momentos:hover {
+  color: var(--dourado-claro);
 }
 
 

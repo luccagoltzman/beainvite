@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Momentos Descontraídos — Beatriz Gusmão</title>
+  <meta name="description" content="Memes e momentos engraçados da jornada da Beatriz até a formatura em Enfermagem">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/momentos.css">
+</head>
+<body class="pagina-momentos">
+
+  <div class="momentos__ambiente" aria-hidden="true">
+    <div class="momentos__brilho momentos__brilho--1"></div>
+    <div class="momentos__brilho momentos__brilho--2"></div>
+  </div>
+
+  <div class="momentos__site">
+
+    <nav class="momentos__nav">
+      <a class="momentos__voltar" href="convite.html">← Voltar ao convite</a>
+    </nav>
+
+    <header class="momentos__topo">
+      <p class="momentos__etiqueta">Área VIP · bastidores</p>
+      <h1 class="momentos__titulo">Momentos Descontraídos</h1>
+      <p class="momentos__subtitulo">
+        Entre um plantão e outro, rolou muita risada.
+        Aqui estão alguns registros da futura <span>Enf. Beatriz Gusmão</span>.
+      </p>
+    </header>
+
+    <section class="momentos__video-secao" aria-label="Vídeo dos bastidores">
+      <div class="momentos__video-wrapper">
+        <video
+          class="momentos__video"
+          id="video-momentos"
+          controls
+          playsinline
+          preload="metadata"
+          poster=""
+        >
+          <source src="assets/video-momentos.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo HTML5.
+        </video>
+      </div>
+      <p class="momentos__video-dica">Clique nos momentos abaixo para pular direto no vídeo</p>
+    </section>
+
+    <section class="momentos__lista" aria-label="Momentos engraçados do vídeo">
+      <h2 class="momentos__secao-titulo">Clássicos do vídeo</h2>
+      <div class="momentos__grade" id="momentos-grade"></div>
+    </section>
+
+    <section class="momentos__memes" aria-label="Frases e memes">
+      <h2 class="momentos__secao-titulo">Diário de uma formanda</h2>
+      <div class="memes__grade">
+        <blockquote class="meme-card meme-card--1">
+          <p>“Só mais um café e eu estudo.”</p>
+          <cite>— Beatriz, todo dia</cite>
+        </blockquote>
+        <blockquote class="meme-card meme-card--2">
+          <p>“Plantão tranquilo hoje.”</p>
+          <cite>— Beatriz, minutos antes do caos</cite>
+        </blockquote>
+        <blockquote class="meme-card meme-card--3">
+          <p>“Já revisei tudo.”</p>
+          <cite>— Beatriz, abrindo o PDF de novo às 2h</cite>
+        </blockquote>
+        <blockquote class="meme-card meme-card--4">
+          <p>“Formatura? Só se eu passar.”</p>
+          <cite>— Beatriz, antes de passar com louvor</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <footer class="momentos__rodape">
+      <a class="momentos__link-convite" href="convite.html">Ver o convite do baile</a>
+      <p class="momentos__rodape-texto">Feito com risada e muito orgulho · 2026</p>
+    </footer>
+
+  </div>
+
+  <script src="js/momentos.js"></script>
+</body>
+</html>

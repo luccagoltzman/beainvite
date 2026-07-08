@@ -35,7 +35,7 @@
     {
       pergunta: "Qual o valor da senha?",
       resposta:
-        'O valor da senha é <strong>R$ 180,00</strong> por convidado. Para mais informações sobre pagamento, <a href="' +
+        "O valor da senha é <strong>R$ 180,00</strong> por convidado. Como os custos da cerimônia são altos, esse valor ajuda a tornar a celebração possível. Para mais informações sobre pagamento, <a href=\"" +
         WHATSAPP_SENHA +
         '" target="_blank" rel="noopener noreferrer">entre em contato pelo WhatsApp</a>.',
     },
