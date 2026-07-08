@@ -1,6 +1,9 @@
 (function () {
-  var WHATSAPP =
-    "https://wa.me/5598985067570?text=Ol%C3%A1%21+Tenho+uma+d%C3%BAvida+sobre+o+baile+de+formatura.";
+  var WHATSAPP_DUVIDA = WhatsAppConvite.link(WhatsAppConvite.mensagens.duvida);
+  var WHATSAPP_CONFIRMACAO = WhatsAppConvite.link(
+    WhatsAppConvite.mensagens.confirmar
+  );
+  var WHATSAPP_SENHA = WhatsAppConvite.link(WhatsAppConvite.mensagens.senha);
   var MAPS =
     "https://www.google.com/maps?q=Av.+S%C3%A3o+Carlos,+04+-+Olho+D%27agua,+S%C3%A3o+Lu%C3%ADs+-+MA,+65065-420";
 
@@ -13,7 +16,9 @@
     {
       pergunta: "Qual o horário?",
       resposta:
-        "O horário ainda será confirmado. Assim que tivermos a informação, atualizaremos o convite. Qualquer dúvida, fale conosco pelo WhatsApp.",
+        "O horário ainda será confirmado. Assim que tivermos a informação, atualizaremos o convite. Qualquer dúvida, <a href=\"" +
+        WHATSAPP_DUVIDA +
+        '" target="_blank" rel="noopener noreferrer">fale conosco pelo WhatsApp</a>.',
     },
     {
       pergunta: "Onde será o evento?",
@@ -30,13 +35,15 @@
     {
       pergunta: "Qual o valor da senha?",
       resposta:
-        "O valor da senha é <strong>R$ 180,00</strong> por convidado. Para mais informações sobre pagamento, entre em contato pelo WhatsApp.",
+        'O valor da senha é <strong>R$ 180,00</strong> por convidado. Para mais informações sobre pagamento, <a href="' +
+        WHATSAPP_SENHA +
+        '" target="_blank" rel="noopener noreferrer">entre em contato pelo WhatsApp</a>.',
     },
     {
       pergunta: "Como confirmar presença?",
       resposta:
         'Para confirmar sua presença, clique no botão <strong>"Confirmar presença"</strong> no convite ou fale diretamente pelo <a href="' +
-        WHATSAPP +
+        WHATSAPP_CONFIRMACAO +
         '" target="_blank" rel="noopener noreferrer">WhatsApp</a>.',
     },
     {
@@ -70,7 +77,7 @@
       '<div class="chatbot__mensagens" id="chatbot-mensagens"></div>' +
       '<div class="chatbot__perguntas" id="chatbot-perguntas"></div>' +
       '<a class="chatbot__whatsapp" href="' +
-      WHATSAPP +
+      WHATSAPP_DUVIDA +
       '" target="_blank" rel="noopener noreferrer">' +
       iconeWhatsApp +
       "Falar no WhatsApp" +
